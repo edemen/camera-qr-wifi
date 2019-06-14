@@ -13,7 +13,13 @@ public class CameraCapturer {
 	
 	public CameraCapturer(){
 		webcam = Webcam.getDefault();
+		
+		if (webcam == null){
+			throw new RuntimeException("No camera detected");
+		}
+		
 		webcam.open();
+		
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 			webcam.close();
 		}));
