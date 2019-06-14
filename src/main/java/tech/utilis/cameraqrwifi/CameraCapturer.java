@@ -13,7 +13,9 @@ public class CameraCapturer {
 	public static BufferedImage captureFromCamera() throws IOException {
 		Webcam webcam = Webcam.getDefault();
 		webcam.open();
-		return webcam.getImage();
+		BufferedImage image = webcam.getImage();
+		webcam.close();
+		return image;
 	}
 
 }
