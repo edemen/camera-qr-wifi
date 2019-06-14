@@ -14,6 +14,13 @@ public class CameraCapturer {
 		Webcam webcam = Webcam.getDefault();
 		webcam.open();
 		BufferedImage image = webcam.getImage();
+		
+		// Small delay to fix weird hanging behaviour
+		try{
+			Thread.sleep(10);
+		}
+		catch(InterruptedException ex){}
+		
 		webcam.close();
 		return image;
 	}
