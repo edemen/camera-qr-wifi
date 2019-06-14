@@ -37,6 +37,10 @@ public class QRParser {
 	 */
 	public static Map<String, String> parseWifi(BufferedImage image) throws NotFoundException, ChecksumException, FormatException {
 		
+		if (image == null){
+			throw new RuntimeException("No image captured from the camera");
+		}
+		
 		Reader xReader = new QRCodeReader();
 		LuminanceSource source = new BufferedImageLuminanceSource(image);
 
