@@ -55,6 +55,10 @@ public class Main {
 							System.out.println("Success");
 							System.exit(0);
 						}
+						else {
+							status.setState(CameraFrame.Status.State.Failed);
+							System.exit(0);
+						}
 					}
 
 				}
