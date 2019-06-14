@@ -2,7 +2,6 @@ package tech.utilis.cameraqrwifi;
 
 import com.github.sarxos.webcam.Webcam;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 /**
  *
@@ -10,19 +9,20 @@ import java.io.IOException;
  */
 public class CameraCapturer {
 	
-	public static BufferedImage captureFromCamera() throws IOException {
-		Webcam webcam = Webcam.getDefault();
+	private final Webcam webcam;
+	
+	public CameraCapturer(){
+		webcam = Webcam.getDefault();
 		webcam.open();
-		BufferedImage image = webcam.getImage();
-		
-		// Small delay to fix weird hanging behaviour
-		try{
-			Thread.sleep(10);
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+			webcam.close();
+		}));
+	}
+	
+	public BufferedImage captureFromCamera(){
+		synchronized(this){
+			return webcam.getImage();
 		}
-		catch(InterruptedException ex){}
-		
-		webcam.close();
-		return image;
 	}
 
 }
