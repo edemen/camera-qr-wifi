@@ -27,6 +27,7 @@ public class Main {
 				}
 				catch (Exception ex){
 					System.out.println("Error: " + ex.getMessage());
+					ex.printStackTrace();
 				}
 				
 				System.out.println("Retry");
