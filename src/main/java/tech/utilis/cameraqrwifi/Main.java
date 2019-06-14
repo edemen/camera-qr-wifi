@@ -46,16 +46,17 @@ public class Main {
 					if(wifiDetails.containsKey("S")){
 						status.setState(CameraFrame.Status.State.Connecting);
 						cameraThread.interrupt();
-					}
-					
-					boolean success = WifiConnector.connect(wifiDetails.get("S"), wifiDetails.get("P"));
-					if (success){
 						
-						status.setState(CameraFrame.Status.State.Connected);
-						
-						System.out.println("Success");
-						System.exit(0);
+						boolean success = WifiConnector.connect(wifiDetails.get("S"), wifiDetails.get("P"));
+						if (success){
+
+							status.setState(CameraFrame.Status.State.Connected);
+
+							System.out.println("Success");
+							System.exit(0);
+						}
 					}
+
 				}
 				catch (Exception ex){
 					status.setState(CameraFrame.Status.State.Failed);
