@@ -24,14 +24,7 @@ import com.google.zxing.qrcode.QRCodeReader;
  * @author Eugene Dementiev
  */
 public class QRParser {
-/*
-	private static String read(String fileName) throws IOException {
-		try (BufferedReader br = new BufferedReader(new InputStreamReader(Demo.class.getResourceAsStream(fileName), Charset.forName("UTF-8")))) {
-			return br.lines().collect(Collectors.joining(System.lineSeparator()));
-		}
-	}
-	*/
-	
+
 	/**
 	 * 
 	 * @param image QR code image
