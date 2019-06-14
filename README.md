@@ -10,5 +10,6 @@ Read QR from camera and connect to WiFi if possible.
 ## Limitations
 * We expect the format of the QR code contents to follow [ZXing reader guidelines](https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11)
 * Cross-platform is implemented with executing platform specific commands based on `os.name`
+* Only OS X platform implemented for now
 
 Nothing creative, just trying to put a couple of libraries together and see how this works out.
