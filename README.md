@@ -19,7 +19,7 @@ Provided you have JDK 8+ and Maven installed, you should be able to do:
 ~~~~
 git clone git@github.com:edemen/camera-qr-wifi.git
 cd camera-qr-wifi
-mvn exec:java '-Dexec.mainClass="tech.utilis.cameraqrwifi.Main"'
+mvn exec:java
 ~~~~
 ### From JAR
 Coming.
