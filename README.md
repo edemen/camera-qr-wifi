@@ -22,5 +22,3 @@ cd camera-qr-wifi
 mvn install
 mvn exec:java
 ~~~~
-### From JAR
-Coming.
